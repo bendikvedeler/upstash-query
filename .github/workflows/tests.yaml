@@ -10,8 +10,8 @@ on:
 env:
   UPSTASH_REDIS_REST_URL2: ${{ secrets.UPSTASH_REDIS_REST_URL }}
   UPSTASH_REDIS_REST_TOKEN2: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
-  UPSTASH_REDIS_REST_URL: foobar
-  UPSTASH_REDIS_REST_TOKEN: secret-token
+  UPSTASH_REDIS_REST_URL: url
+  UPSTASH_REDIS_REST_TOKEN: another-token
 jobs:
   test:
     runs-on: ubuntu-latest
