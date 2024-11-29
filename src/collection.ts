@@ -11,6 +11,7 @@ export type CollectionConfig = {
   name: string;
   redis: Redis;
   encoderDecoder?: EncoderDecoder;
+  ttl?: number;
 };
 export class Collection<TData extends Data> {
   public readonly name: string;
@@ -20,6 +21,8 @@ export class Collection<TData extends Data> {
 
   private readonly enc: EncoderDecoder;
 
+  private readonly ttl?: number;
+
   constructor(cfg: CollectionConfig) {
     if (cfg.name.length === 0) {
       throw new Error("Collection name cannot be empty");
@@ -28,6 +31,7 @@ export class Collection<TData extends Data> {
     this.redis = cfg.redis;
     this.interceptor = new Interceptor<TData>();
     this.enc = cfg.encoderDecoder || new Json();
+    this.ttl = cfg.ttl;
   }
 
   /**
