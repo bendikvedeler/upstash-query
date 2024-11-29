@@ -24,7 +24,6 @@ This library is tested well but not yet production ready. We are looking for fee
 - [ ] **Range Queries**: Query your data with range queries. Either numeric or lexicographic.
 
 
-
 ## Quickstart
 
 ```ts
